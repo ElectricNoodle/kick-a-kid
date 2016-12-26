@@ -5,10 +5,9 @@
 
   Menu.prototype = {
     create: function () {
-      var text = this.add.text(this.game.width * 0.5, this.game.height * 0.5,
-        'Kick a Kid', {font: '72px Arial', fill: '#ffffff', align: 'center'
-      });
-      text.anchor.set(0.5);
+     // this.background = game.add.renderTexture(800, 600, 'mousetrail');
+     // this.background_image = game.make.sprite(0, 0, 'menu_background');
+     // this.background_image.anchor.set(0.5);
       this.input.onDown.add(this.onDown, this);
     },
 

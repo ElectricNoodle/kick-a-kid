@@ -11,8 +11,8 @@
       this.asset = this.add.sprite(this.game.width * 0.5 - 110, this.game.height * 0.5 - 10, 'preloader');
       this.load.setPreloadSprite(this.asset);
 
-      /*this.load.image('andy', 'assets/images/pakora/small/andy-crinkle-cut-chip.png');
-
+      this.load.image('menu_background', 'assets/images/menu_background.png');
+/*
       this.load.shader('fisheye', 'assets/shaders/Fisheye.frag');
       */
        this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
