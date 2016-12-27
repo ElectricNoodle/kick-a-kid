@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  function Menu() {}
+  function HighScore() {}
 
-  Menu.prototype = {
+  HighScore.prototype = {
     create: function () {
-      this.backgroundSprite = this.game.make.sprite(0, 0, 'menuBackground');
+      this.backgroundSprite = this.game.make.sprite(0, 0, 'highscoreBack');
       this.backgroundTexture = this.game.add.renderTexture(this.game.width,this.game.height);
       this.game.add.sprite(0,0,this.backgroundTexture);
     },
@@ -15,14 +15,12 @@
       this.handleInput();
     },
     handleInput: function() {
-      if(this.game.input.keyboard.isDown(Phaser.Keyboard.S)){
-        this.game.state.start('game');
-      }else if(this.game.input.keyboard.isDown(Phaser.Keyboard.H)){
-        this.game.state.start('highscore');
+      if(this.game.input.keyboard.isDown(Phaser.Keyboard.B)){
+        this.game.state.start('menu');
       }
     },
   };
 
   window['kickakid'] = window['kickakid'] || {};
-  window['kickakid'].Menu = Menu;
+  window['kickakid'].HighScore = HighScore;
 }());

@@ -11,12 +11,11 @@
       this.asset = this.add.sprite(this.game.width * 0.5 - 110, this.game.height * 0.5 - 10, 'preloader');
       this.load.setPreloadSprite(this.asset);
 
-      this.load.image('menu_background', 'assets/images/menu_background.png');
-/*
-      this.load.shader('fisheye', 'assets/shaders/Fisheye.frag');
-      */
-       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
-       this.loadResources();
+      this.load.image('menuBackground', 'assets/images/menu_background.png');
+      this.load.image('highscoreBack',  'assets/images/highscore_background.png');
+
+      this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
+      this.loadResources();
 
       this.ready = true;
     },
@@ -30,9 +29,7 @@
     },
 
     update: function () {
-      // if (!!this.ready) {
         this.game.state.start('menu');
-      // }
     },
 
     onLoadComplete: function () {
