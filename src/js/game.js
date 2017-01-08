@@ -10,8 +10,16 @@
 		},
 		create: function () {
 			that = this;
+		    this.DEBUG = true;
+	        this.game.LBOUNDX = -960;
+	        this.game.LBOUNDY = -600;
+	        this.game.UBOUNDX = 960;
+	        this.game.UBOUNDY = 600;
+	        this.game.world.setBounds(this.game.LBOUNDX,this.game.LBOUNDY,this.game.UBOUNDX,this.game.UBOUNDY);
+            this.background = this.game.add.tileSprite(this.game.LBOUNDX,this.game.LBOUNDY,this.game.UBOUNDX,this.game.UBOUNDY, 'placeholder_grass');
+        	this.players = this.game.add.group();
 			this.initPlayer();
-
+			this.game.camera.follow(this.playerSprite);
 		},
 		update: function () {
 			this.checkInput();
@@ -20,8 +28,6 @@
 			playerSprite = this.game.add.sprite(this.game.world.centerX - 64,this.game.world.centerY - 64,'playerSprite');
 			playerSprite.animations.add('walk',[0,1,2,3,4,5],10,true);
 			playerSprite.animations.add('still',[1],1,true);
-
-			
 		},
 		checkInput : function () {
 			if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){

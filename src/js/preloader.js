@@ -14,6 +14,8 @@
       this.load.image('menuBackground', 'assets/images/menu_background.png');
       this.load.image('highscoreBack',  'assets/images/highscore_background.png');
 
+      this.load.image('placeholder_grass', 'assets/images/placeholder_ground.png');
+
       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
       this.loadResources();
 
